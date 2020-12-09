@@ -1,3 +1,5 @@
+package classes;
+
 import interfaces.ISetting;
 
 public class Setting implements ISetting {
