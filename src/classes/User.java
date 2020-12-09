@@ -46,4 +46,14 @@ public class User implements IUser {
     public void clearNotifies() {
         notifies.clear();
     }
+
+    @Override
+    public String getName() {
+        return setting_.getName();
+    }
+
+    @Override
+    public boolean checkPassword(String password) {
+        return setting_.getPassword().equals(password);
+    }
 }

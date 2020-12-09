@@ -7,4 +7,6 @@ public interface IUser {
     void addNotify(INotify notify);
     void deleteNotify(INotify notify);
     void clearNotifies();
+    String getName();
+    boolean checkPassword(String password);
 }

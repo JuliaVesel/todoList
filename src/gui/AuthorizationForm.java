@@ -1,6 +1,11 @@
 package gui;
 
+import classes.Authorization;
+import interfaces.IAuthorization;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AuthorizationForm extends JFrame {
     private JPanel panel1;
@@ -15,7 +20,20 @@ public class AuthorizationForm extends JFrame {
         setSize(400,400);
         setTitle("Авторизация");
 
+        IAuthorization auth = Authorization.getInstance();
+
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        enterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = textField1.getText();
+                char[] password = passwordField1.getPassword();
+
+                if (!auth.checkUser(name, String.valueOf(password))) {
+                    System.out.print("Такого пользователя не существует!");
+                }
+            }
+        });
     }
 }
