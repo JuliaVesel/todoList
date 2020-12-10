@@ -17,7 +17,7 @@ public class AuthorizationForm extends JFrame {
     public AuthorizationForm() {
         setContentPane(panel1);
         setVisible(true);
-        setSize(400,400);
+        pack();
         setTitle("Авторизация");
 
         IAuthorization auth = Authorization.getInstance();
@@ -31,8 +31,22 @@ public class AuthorizationForm extends JFrame {
                 char[] password = passwordField1.getPassword();
 
                 if (!auth.checkUser(name, String.valueOf(password))) {
-                    System.out.print("Такого пользователя не существует!");
+                    JOptionPane.showMessageDialog(null,
+                            "Такого пользователя не существует!");
                 }
+                else {
+                    JOptionPane.showMessageDialog(null,
+                            "Успешно!");
+                }
+            }
+        });
+
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                RegisterForm rf = new RegisterForm();
+                rf.setVisible(true);
             }
         });
     }

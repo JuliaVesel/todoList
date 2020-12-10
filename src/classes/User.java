@@ -11,10 +11,18 @@ public class User implements IUser {
     private ArrayList<INotify> notifies;
     private ISetting setting_;
 
-    public User(String name, String password) {
+    public User(String name, String password, String city) {
         setting_ = new Setting();
         setting_.setName(name);
         setting_.setPassword(password);
+        setting_.setCity(city);
+    }
+
+    public User(ISetting setting) {
+        setting_ = new Setting();
+        setting_.setName(setting.getName());
+        setting_.setPassword(setting.getPassword());
+        setting_.setCity(setting.getCity());
     }
 
     @Override
