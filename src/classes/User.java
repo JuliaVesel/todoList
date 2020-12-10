@@ -83,4 +83,19 @@ public class User implements IUser {
     public String getCity() {
         return setting_.getCity();
     }
+
+    @Override
+    public void updateName(String name) {
+        setting_.setName(name);
+    }
+
+    @Override
+    public void updatePassword(String password) {
+        setting_.setPassword(password);
+    }
+
+    @Override
+    public void updateCity(String city) {
+        setting_.setCity(city);
+    }
 }

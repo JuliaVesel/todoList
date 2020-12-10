@@ -14,4 +14,7 @@ public interface IUser {
     String getName();
     boolean checkPassword(String password);
     String getCity();
+    void updateName(String name);
+    void updatePassword(String password);
+    void updateCity(String city);
 }

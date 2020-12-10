@@ -16,6 +16,7 @@ public class MianForm extends JFrame{
     private JPanel jpanelMenu;
     private JPanel jpanelMain;
     private JPanel japnel1;
+    private JLabel userName;
     private IUser user_;
 
     public MianForm(IUser user) {
@@ -25,6 +26,8 @@ public class MianForm extends JFrame{
         setSize(800, 600);
         setTitle("Списки");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        userName.setText(user.getName());
 
         jpanelMain.setLayout(new GridLayout(0, 1, 5, 5));
         jpanelMain.add(new ListForm(user).getPanel1());
@@ -60,7 +63,7 @@ public class MianForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jpanelMain.removeAll();
-                jpanelMain.add(new SettingsPanel(user_));
+                jpanelMain.add(new SettingForm(user_, userName).getPanel1());
                 japnel1.revalidate();
             }
         });
