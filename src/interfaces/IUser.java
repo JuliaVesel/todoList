@@ -8,6 +8,8 @@ public interface IUser {
     void addList(IList list);
     void deleteList(IList list);
     void clearLists();
+    ArrayList<INotify> getNotifies();
+    INotify getNotify(String title);
     void addNotify(INotify notify);
     void deleteNotify(INotify notify);
     void clearNotifies();

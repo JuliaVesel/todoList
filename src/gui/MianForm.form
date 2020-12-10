@@ -36,7 +36,7 @@
           <component id="7ee71" class="javax.swing.JButton" binding="showNotify">
             <constraints/>
             <properties>
-              <text value="Уведомления"/>
+              <text value="Напоминания"/>
             </properties>
           </component>
           <component id="f553e" class="javax.swing.JButton" binding="showWether">

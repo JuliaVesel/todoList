@@ -55,6 +55,21 @@ public class User implements IUser {
     }
 
     @Override
+    public ArrayList<INotify> getNotifies() {
+        return notifies;
+    }
+
+    @Override
+    public INotify getNotify(String title) {
+        for(INotify item : notifies) {
+            if (item.getTitle().equals(title)) {
+                return item;
+            }
+        }
+        return new Notify("", "");
+    }
+
+    @Override
     public void addNotify(INotify notify) {
         notifies.add(notify);
     }

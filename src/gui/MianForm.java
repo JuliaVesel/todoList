@@ -36,6 +36,7 @@ public class MianForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jpanelMain.removeAll();
+                setTitle("Списки");
                 jpanelMain.add(new ListForm(user).getPanel1());
                 japnel1.revalidate();
             }
@@ -45,7 +46,8 @@ public class MianForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jpanelMain.removeAll();
-                jpanelMain.add(new NotifyPanel(user_));
+                setTitle("Напоминания");
+                jpanelMain.add(new NotifyForm(user_).getPanel1());
                 japnel1.revalidate();
             }
         });
@@ -54,6 +56,7 @@ public class MianForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jpanelMain.removeAll();
+                setTitle("Погода");
                 jpanelMain.add(new WetherPanel(user_));
                 japnel1.revalidate();
             }
@@ -63,6 +66,7 @@ public class MianForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jpanelMain.removeAll();
+                setTitle("Настройки");
                 jpanelMain.add(new SettingForm(user_, userName).getPanel1());
                 japnel1.revalidate();
             }
