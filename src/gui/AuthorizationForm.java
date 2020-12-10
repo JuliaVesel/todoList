@@ -1,7 +1,9 @@
 package gui;
 
+import app.Main;
 import classes.Authorization;
 import interfaces.IAuthorization;
+import interfaces.IUser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -35,8 +37,10 @@ public class AuthorizationForm extends JFrame {
                             "Такого пользователя не существует!");
                 }
                 else {
-                    JOptionPane.showMessageDialog(null,
-                            "Успешно!");
+                    dispose();
+                    IUser user = auth.getUserByName(textField1.getText());
+                    MianForm mf = new MianForm(user);
+                    mf.setVisible(true);
                 }
             }
         });

@@ -7,8 +7,8 @@ import interfaces.IUser;
 import interfaces.INotify;
 
 public class User implements IUser {
-    private ArrayList<IList> lists;
-    private ArrayList<INotify> notifies;
+    private ArrayList<IList> lists = new ArrayList<IList>();
+    private ArrayList<INotify> notifies = new ArrayList<INotify>();
     private ISetting setting_;
 
     public User(String name, String password, String city) {
@@ -23,6 +23,20 @@ public class User implements IUser {
         setting_.setName(setting.getName());
         setting_.setPassword(setting.getPassword());
         setting_.setCity(setting.getCity());
+    }
+    @Override
+    public ArrayList<IList> getLists() {
+        return lists;
+    }
+
+    @Override
+    public IList getList(String title) {
+        for(IList list : lists) {
+            if (list.getListTitle().equals(title)) {
+                return list;
+            }
+        }
+        return new List("");
     }
 
     @Override
@@ -63,5 +77,10 @@ public class User implements IUser {
     @Override
     public boolean checkPassword(String password) {
         return setting_.getPassword().equals(password);
+    }
+
+    @Override
+    public String getCity() {
+        return setting_.getCity();
     }
 }

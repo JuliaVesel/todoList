@@ -12,6 +12,7 @@ public class Authorization implements IAuthorization {
     public static IAuthorization getInstance() {
         if (instance == null) {
             instance = new Authorization();
+            instance.addUser(new User("user", "password", "spb"));
         }
         return instance;
     }
@@ -38,5 +39,15 @@ public class Authorization implements IAuthorization {
             }
         }
         return false;
+    }
+
+    @Override
+    public IUser getUserByName(String name) {
+        for(IUser user : users) {
+            if (user.getName().equals(name)) {
+                return user;
+            }
+        }
+        return new User("Default", "admin", "Moscow");
     }
 }

@@ -1,9 +1,12 @@
 package interfaces;
 
+import java.util.ArrayList;
+
 public interface IList {
+    ArrayList<IListItem> getListItems();
     void addListItem(IListItem listItem);
     void deleteListItem(IListItem listItem);
-    void getListItem(int index);
+    IListItem getListItem(String title);
     IListItem getFirstListItem();
     IListItem getLastListItem();
     void setListTitle(String title);

@@ -1,6 +1,10 @@
 package interfaces;
 
+import java.util.ArrayList;
+
 public interface IUser {
+    ArrayList<IList> getLists();
+    IList getList(String title);
     void addList(IList list);
     void deleteList(IList list);
     void clearLists();
@@ -9,4 +13,5 @@ public interface IUser {
     void clearNotifies();
     String getName();
     boolean checkPassword(String password);
+    String getCity();
 }
